@@ -58,7 +58,7 @@ namespace TestCoreEF.Controllers
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
-            int pageSize = 3;
+            int pageSize = 10;
             return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), page ?? 1, pageSize));
         }
 
